@@ -78,7 +78,7 @@ print_start_success() {
     <% if node['platform_family'] == 'rhel' %>
     action $"Starting <%= @mysql_name %>: " /bin/true
     <% else %>
-    echo "Staring MySQL instance <%= @mysql_name %>"
+    echo "Starting MySQL instance <%= @mysql_name %>"
     <% end %>
     return 0;
 }

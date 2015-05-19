@@ -236,12 +236,14 @@ stop() {
             if [ ! -e <%= @pid_file %> ]; then
               break
             fi
+            echo -n '.'
             sleep 1
             let TIMEOUT=${TIMEOUT}-1
         done
 
         # Handle timeout
         if [ $TIMEOUT -eq 0 ]; then
+            echo -n ' timed out'
             ret=1
         fi
 
